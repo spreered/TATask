@@ -1,24 +1,37 @@
-# README
+# TATask 
+A simple task management system
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Table Schema
 
-Things you may want to cover:
+table tasks
 
-* Ruby version
+column | type
+--|--
+title | string
+content | text
+state | integer
+priority | integer
+end_time | date
+user_id | integer
 
-* System dependencies
+table task_tags
 
-* Configuration
+column | type
+---|---
+task_id | integer
+tag_id | integer
 
-* Database creation
+table tag
 
-* Database initialization
+column | type
+---|---
+name | string
 
-* How to run the test suite
+table user
 
-* Services (job queues, cache servers, search engines, etc.)
+column | type
+---|---
+email | string
+name | string
+password | string
 
-* Deployment instructions
-
-* ...
