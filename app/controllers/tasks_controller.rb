@@ -14,6 +14,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
+      flash[:notice] = 'CREATED A NEW TASK!!!'
       redirect_to task_path(@task)
     else
       render new_task_path
@@ -25,6 +26,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
+      flash[:notice] = 'TASK UPDATED!!!'
       redirect_to task_path(@task)
     else
       render edit_task_path(@task)
@@ -33,6 +35,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
+    flash[:alert] = 'DELETE A TASK!!!'
     redirect_to root_path
   end
 
