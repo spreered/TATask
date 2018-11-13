@@ -1,0 +1,8 @@
+<h1>task show page</h1>
+
+<ul>
+  <li><strong>title :</strong> <%=@task.title%></li>
+  <li><%=@task.content%></li>
+</ul>
+
+<%= link_to  "home", root_path %> | <%= link_to  "edit", edit_task_path(@task) %> | <%=link_to "remove task", task_path, data: {:confirm => 'Are you sure?'}, method: :delete%> | <%= link_to  "new task", new_task_path %> | 
