@@ -1,0 +1,33 @@
+require 'rails_helper'
+
+RSpec.feature 'TasksUpdate', type: :feature do
+  before(:each) do
+    @task = FactoryBot.create(:task)
+  end
+  scenario 'update tasks from index pages' do
+    visit tasks_path
+    find("a[href^='/tasks/#{@task.id}/edit']").click
+    expect(page).to have_current_path(edit_task_path(@task))
+    fill_in 'task[title]',	with: 'my test task'
+    fill_in 'task[content]', with: 'to do content' 
+    click_button 'submit'
+    expect(page).to have_current_path(task_path(@task))
+    expect(page).to have_content('my test task')
+
+    expect(@task.reload.title).to match('my test task')  
+    expect(@task.content).to match('to do content')  
+  end
+  scenario 'update tasks from show pages' do
+    visit task_path(@task)
+    click_link 'edit'
+    expect(page).to have_current_path(edit_task_path(@task))
+    fill_in 'task[title]',	with: 'my test task'
+    fill_in 'task[content]', with: 'to do content' 
+    click_button 'submit'
+    expect(page).to have_current_path(task_path(@task))
+    expect(page).to have_content('my test task')
+
+    expect(@task.reload.title).to match('my test task')
+    expect(@task.content).to match('to do content')
+  end
+end
