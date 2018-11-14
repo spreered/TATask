@@ -6,8 +6,8 @@ RSpec.feature "TasksShow", type: :feature do
   end
   scenario "index page can visit show page" do
     visit tasks_path
-    click_link 'task title 1'
-    expect(page).to have_content 'task title'
-    expect(page).to have_content 'task content' 
+    click_link @task.title
+    expect(page).to have_content @task.title
+    expect(page).to have_content @task.content
   end
 end
