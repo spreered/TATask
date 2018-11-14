@@ -8,7 +8,7 @@ RSpec.feature "TasksNew", type: :feature do
     expect{
       fill_in 'task[title]',	with: 'my test task'
       fill_in 'task[content]', with: 'to do content' 
-      click_button 'create task'
+      click_button 'submit'
       }.to change{Task.count}.by(1)
   end
 end
