@@ -15,5 +15,9 @@ module Tatask
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # setup i18n default zh-TW
+    config.i18n.default_locale = "zh-TW"
+
   end
 end
