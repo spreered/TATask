@@ -20,3 +20,10 @@ zh-TW:
       notice: "更新任務成功"
     destroy:
       notice: "刪除成功"
+  activerecord:
+    errors:
+      models:
+        task:
+          attributes:
+            title:
+              blank: "請輸入任務標題"
