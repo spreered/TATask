@@ -11,6 +11,7 @@ zh-TW:
       content: "Content"
       edit: "Edit"
       delete: "Delete"
+      created_at: "created time"
       delete_confirm_msg: "Delete task, are you sure?"
   tasks:
     create:
