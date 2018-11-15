@@ -29,7 +29,7 @@ class TasksController < ApplicationController
       flash[:notice] = t('.notice')
       redirect_to task_path(@task)
     else
-      render edit_task_path(@task)
+      render :edit
     end
   end
 
