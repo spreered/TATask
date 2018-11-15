@@ -15,7 +15,7 @@ RSpec.feature "TasksDestroy", type: :feature do
     scenario "delete tasks from task show pages" do
     visit task_path(@task)
     expect{
-        click_link 'remove task'
+        click_link I18n.t('views.tasks.delete')
     }.to change{ Task.count }.by(-1)
 
   end

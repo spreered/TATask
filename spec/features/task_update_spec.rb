@@ -10,7 +10,7 @@ RSpec.feature 'TasksUpdate', type: :feature do
     expect(page).to have_current_path(edit_task_path(@task))
     fill_in 'task[title]',	with: 'my test task'
     fill_in 'task[content]', with: 'to do content' 
-    click_button 'submit'
+    click_button I18n.t('views.submit_btn')
     expect(page).to have_current_path(task_path(@task))
     expect(page).to have_content('my test task')
 
@@ -19,11 +19,11 @@ RSpec.feature 'TasksUpdate', type: :feature do
   end
   scenario 'update tasks from show pages' do
     visit task_path(@task)
-    click_link 'edit'
+    click_link I18n.t('views.tasks.edit')
     expect(page).to have_current_path(edit_task_path(@task))
     fill_in 'task[title]',	with: 'my test task'
     fill_in 'task[content]', with: 'to do content' 
-    click_button 'submit'
+    click_button I18n.t('views.submit_btn')
     expect(page).to have_current_path(task_path(@task))
     expect(page).to have_content('my test task')
 
