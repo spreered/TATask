@@ -19,5 +19,7 @@ module Tatask
     # setup i18n default zh-TW
     config.i18n.default_locale = "zh-TW"
 
+    # config timezone to Taipei
+    config.time_zone = "Taipei"
   end
 end
