@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.feature "TasksIndex", type: :feature do
-  before(:each) do
-    @task = FactoryBot.create(:task)
+  let(:task) do
+    FactoryBot.create(:task)
   end
   scenario "index page can see tasks" do
+    task
     visit tasks_path
-    expect(page).to have_content "task title"
+    expect(page).to have_content task.title
   end
 
 end
