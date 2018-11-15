@@ -1,6 +1,5 @@
 <%= simple_form_for task do |f| %>
-<%=f.input :title %>
-<%=f.input :content %>
-
-<%=f.button :submit, 'submit' %>
+<%=f.input :title, label: t('views.tasks.title') %>
+<%=f.input :content, label: t('views.tasks.content') %>
+<%=f.button :submit, t('views.submit_btn') %>
 <%end%>

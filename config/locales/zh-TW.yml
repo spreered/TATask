@@ -1,0 +1,21 @@
+zh-TW:
+  views:
+    edit_task: "編輯任務"
+    new_task: "新增任務"
+    show_task: "任務檢視"
+    tasks_banner: "TATask 任務管理系統"
+    home: "首頁"
+    submit_btn: "送出"
+    tasks:
+      title: "標題"
+      content: "內容"
+      edit: "編輯"
+      delete: "刪除"
+      delete_confirm_msg: "要刪除任務，你確定嗎？"
+  tasks:
+    create:
+      notice: "新增任務成功"
+    update:
+      notice: "更新任務成功"
+    destroy:
+      notice: "刪除成功"
