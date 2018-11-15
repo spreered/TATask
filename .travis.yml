@@ -1,0 +1,22 @@
+# Setting up Travis CI:
+services:
+  - postgresql
+before_script:
+  - cp config/database.yml.travis config/database.yml
+
+language: ruby
+rvm:
+  - 2.5.3
+
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+env:
+  global:
+  - PGPORT=5433
+script:
+  - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
+  - bundle exec rspec
