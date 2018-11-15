@@ -11,6 +11,7 @@ zh-TW:
       content: "內容"
       edit: "編輯"
       delete: "刪除"
+      created_at: "新增時間"
       delete_confirm_msg: "要刪除任務，你確定嗎？"
   tasks:
     create:
