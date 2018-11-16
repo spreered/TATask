@@ -60,6 +60,7 @@ group :development do
   gem 'capistrano', '~> 3.11', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-passenger', require: false
+  # gem 'capistrano-rvm', require: false
 
 end
 
