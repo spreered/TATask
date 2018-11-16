@@ -1,10 +1,11 @@
 <h1><%=t('views.tasks_banner')%></h1>
+<%= request.GET%>
 <%= link_to  t('views.new_task'), new_task_path %>
 <table border="1" style="border-collapse: collapse;">
   <thead>
     <tr>
-      <td><%=t('views.tasks.created_at')%></td>
-      <td><%=t('views.tasks.deadline')%></td>
+      <td><%=created_sort%></td>
+      <td><%=deadline_sort%></td>
       <td><%=t('views.tasks.title')%></td>
       <td></td>
     </tr>
