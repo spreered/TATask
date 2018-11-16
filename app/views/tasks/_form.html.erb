@@ -9,5 +9,6 @@
 <%= simple_form_for task do |f| %>
 <%=f.input :title, label: t('views.tasks.title') %>
 <%=f.input :content, label: t('views.tasks.content') %>
+<%=f.input :deadline, label: t('views.tasks.deadline')%>
 <%=f.button :submit, t('views.submit_btn') %>
 <%end%>
