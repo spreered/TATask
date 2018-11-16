@@ -3,7 +3,7 @@
 <ul>
   <li><strong><%= t('views.tasks.title')%> :</strong> <%=@task.title%></li>
   <li><strong><%= t('views.tasks.content')%> :</strong><%=@task.content%></li>
-  <li><strong><%= t('views.tasks.deadline')%> :</strong><%=l(@task.deadline, format: :short)%></li>
+  <li><strong><%= t('views.tasks.deadline')%> :</strong><%=l(@task.deadline, format: :short) if @task.deadline.present?%></li>
 </ul>
 
 <%= link_to t('views.home'), root_path %> | <%= link_to  t('views.tasks.edit'), edit_task_path(@task) %> | <%=link_to t('views.tasks.delete'), task_path, data: {:confirm => t('views.tasks.delete_confirm_msg')}, method: :delete %> | <%= link_to t('views.new_task'), new_task_path %> | 
