@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[edit update show destroy]
   def index
-    @tasks = Task.all.order(created_at: :desc)
+    # @tasks = Task.all.order(created_at: :desc)
+    sort_params = { "by_created_asc" => "created_at ASC", "by_created_desc" => "created_at DESC", "by_deadline_desc" => "deadline DESC", "by_deadline_asc" => "deadline ASC" }
+    @tasks = Task.ordered(sort_params[params[:sort]])
   end
 
   def show
@@ -42,7 +44,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :content)
+    params.require(:task).permit(:title, :content, :deadline)
   end
 
   def set_task

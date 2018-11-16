@@ -9,17 +9,30 @@ RSpec.feature "TasksIndex", type: :feature do
     visit tasks_path
     expect(page).to have_content task.title
   end
-  scenario "task would ordered by time" do
+  scenario "task would default ordered by created_at time" do
     task_1 = FactoryBot.create(:task, created_at: Time.now.yesterday)
     task_2 = FactoryBot.create(:task, created_at: Time.now)
 
     visit tasks_path
     puts task_1.title
     puts task_2.title
-    # page.should have_selector("table tbody tr:nth-child(1) td:nth-child(2)", content: task_1.title)
-    # page.should have_selector("table tbody tr:nth-child(2) td:nth-child(2)", content: task_2.title)
-    expect(find('table tbody tr:nth-child(1) td:nth-child(2)')).to have_content(task_2.title)
-    expect(find('table tbody tr:nth-child(2) td:nth-child(2)')).to have_content(task_1.title)
+    expect(find('table tbody tr:nth-child(1) td:nth-child(3)')).to have_content(task_2.title)
+    expect(find('table tbody tr:nth-child(2) td:nth-child(3)')).to have_content(task_1.title)
   end
+  scenario "tasks could ordered by deadline desc and asc" do
+    task_1 = FactoryBot.create(:task, :deadline_next_week)
+    task_2 = FactoryBot.create(:task, :deadline_next_2_week)
+
+    visit tasks_path
+    click_link I18n.t('views.tasks.deadline')
+    puts task_1.title
+    puts task_2.title
+    expect(find('table tbody tr:nth-child(1) td:nth-child(3)')).to have_content(task_2.title)
+    expect(find('table tbody tr:nth-child(2) td:nth-child(3)')).to have_content(task_1.title)
+    click_link I18n.t('views.tasks.deadline')
+    expect(find('table tbody tr:nth-child(1) td:nth-child(3)')).to have_content(task_1.title)
+    expect(find('table tbody tr:nth-child(2) td:nth-child(3)')).to have_content(task_2.title)
+  end
+
 
 end

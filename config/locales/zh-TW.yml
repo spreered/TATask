@@ -9,6 +9,7 @@ zh-TW:
     tasks:
       title: "標題"
       content: "內容"
+      deadline: "結束時間"
       edit: "編輯"
       delete: "刪除"
       created_at: "新增時間"
