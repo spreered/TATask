@@ -20,4 +20,14 @@ module TasksHelper
       link_to t('views.tasks.priority_t'), tasks_path(sort: 'priority_desc')
     end
   end
+  def state_control(task)
+    ctrl_str = ''
+    if task.todo?
+      ctrl_str +=  ' ' + link_to(t('views.tasks.state.start'), start_task_path, method: :post) + ' '
+    end
+    unless task.completed?
+      ctrl_str += ' ' + link_to(t('views.tasks.state.done'), done_task_path, method: :post) + ' '
+    end
+    ctrl_str.html_safe
+  end
 end

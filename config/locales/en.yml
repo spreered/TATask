@@ -12,11 +12,18 @@ zh-TW:
       edit: "Edit"
       deadline: "Deadline"
       delete: "Delete"
-      priority: "Priority"
+      priority_t: "Priority"
       priority:
         low: "Low"
         medium: "Medium"
         high: "High"
+      state_t: "State"
+      state:
+        todo: "Todo"
+        doing: "Doing"
+        completed: "Completed"
+        start: "Start"
+        done: "Done"
       created_at: "created time"
       delete_confirm_msg: "Delete task, are you sure?"
   tasks:
