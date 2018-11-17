@@ -14,8 +14,6 @@ RSpec.feature "TasksIndex", type: :feature do
     task_2 = FactoryBot.create(:task, created_at: Time.now)
 
     visit tasks_path
-    puts task_1.title
-    puts task_2.title
     expect(find('table tbody tr:nth-child(1) td:nth-child(3)')).to have_content(task_2.title)
     expect(find('table tbody tr:nth-child(2) td:nth-child(3)')).to have_content(task_1.title)
   end
@@ -25,13 +23,27 @@ RSpec.feature "TasksIndex", type: :feature do
 
     visit tasks_path
     click_link I18n.t('views.tasks.deadline')
-    puts task_1.title
-    puts task_2.title
     expect(find('table tbody tr:nth-child(1) td:nth-child(3)')).to have_content(task_2.title)
     expect(find('table tbody tr:nth-child(2) td:nth-child(3)')).to have_content(task_1.title)
     click_link I18n.t('views.tasks.deadline')
     expect(find('table tbody tr:nth-child(1) td:nth-child(3)')).to have_content(task_1.title)
     expect(find('table tbody tr:nth-child(2) td:nth-child(3)')).to have_content(task_2.title)
+  end
+  scenario "tasks could ordered by priority desc and asc" do
+    task_1 = FactoryBot.create(:task, )
+    task_2 = FactoryBot.create(:task, :medium_priority)
+    task_3 = FactoryBot.create(:task, :high_priority)
+
+    visit tasks_path
+    click_link I18n.t('views.tasks.priority_t')
+
+    expect(find('table tbody tr:nth-child(1) td:nth-child(3)')).to have_content(task_3.title)
+    expect(find('table tbody tr:nth-child(2) td:nth-child(3)')).to have_content(task_2.title)
+    expect(find('table tbody tr:nth-child(3) td:nth-child(3)')).to have_content(task_1.title)
+    click_link I18n.t('views.tasks.priority_t')
+    expect(find('table tbody tr:nth-child(1) td:nth-child(3)')).to have_content(task_1.title)
+    expect(find('table tbody tr:nth-child(2) td:nth-child(3)')).to have_content(task_2.title)
+    expect(find('table tbody tr:nth-child(3) td:nth-child(3)')).to have_content(task_3.title)
   end
 
 
