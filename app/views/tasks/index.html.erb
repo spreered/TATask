@@ -7,7 +7,9 @@
       <td><%=deadline_sort%></td>
       <td><%=t('views.tasks.title')%></td>
       <td><%=priority_sort%></td>
-      <td></td>
+      <td><%=t('views.tasks.state_t')%></td>
+      <td>
+
     </tr>
   </thead>
   <tbody>
@@ -17,7 +19,9 @@
       <td><%=I18n.l( task.deadline, format: :short) if task.deadline.present?%></td>
       <td><%=link_to task.title, task_path(task) %></td>
       <td><%=t("views.tasks.priority.#{task.priority}") %></td>
+      <td><%= t("views.tasks.state.#{task.state}")%></td>
       <td><%= link_to  t('views.tasks.edit'), edit_task_path(task) %> <%=button_to 'x', task_path(task),data: {:confirm => 'Are you sure?'}, method: :delete%></td>
+
     </tr>
     <%end%>
   </tbody> 
