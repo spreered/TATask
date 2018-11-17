@@ -12,6 +12,11 @@ zh-TW:
       deadline: "結束時間"
       edit: "編輯"
       delete: "刪除"
+      priority_t: "優先權"
+      priority:
+        low: "低"
+        medium: "中"
+        high: "高"
       created_at: "新增時間"
       delete_confirm_msg: "要刪除任務，你確定嗎？"
   tasks:

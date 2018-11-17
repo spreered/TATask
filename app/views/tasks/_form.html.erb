@@ -10,5 +10,7 @@
 <%=f.input :title, label: t('views.tasks.title') %>
 <%=f.input :content, label: t('views.tasks.content') %>
 <%=f.input :deadline, label: t('views.tasks.deadline')%>
+<%= f.input :priority,label: t('views.tasks.priority_t'), as: :radio_buttons, collection: [['low', t('views.tasks.priority.low')],
+['medium', t('views.tasks.priority.medium')], ['high', t('views.tasks.priority.high')]], label_method: :second, value_method: :first %>
 <%=f.button :submit, t('views.submit_btn') %>
 <%end%>
