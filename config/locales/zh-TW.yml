@@ -17,6 +17,13 @@ zh-TW:
         low: "低"
         medium: "中"
         high: "高"
+      state_t: "狀態"
+      state:
+        todo: "待處理"
+        doing: "進行中"
+        completed: "完成"
+        start: "開始"
+        done: "完成"
       created_at: "新增時間"
       delete_confirm_msg: "要刪除任務，你確定嗎？"
   tasks:
