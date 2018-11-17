@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[edit update show destroy]
+  before_action :set_task, only: %i[edit update show destroy start done]
   def index
     # @tasks = Task.all.order(created_at: :desc)
     sort_params = { "created_asc" => "created_at ASC",
@@ -44,6 +44,20 @@ class TasksController < ApplicationController
     @task.destroy
     flash[:alert] = t('.notice')
     redirect_to root_path
+  end
+
+  def start
+    if @task.todo?
+      @task.start!
+    end
+    redirect_back(fallback_location: root_path)
+  end
+
+  def done
+    if !@task.completed?
+      @task.done!
+    end
+    redirect_back(fallback_location: root_path)
   end
 
   private
