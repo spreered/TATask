@@ -12,6 +12,11 @@ zh-TW:
       edit: "Edit"
       deadline: "Deadline"
       delete: "Delete"
+      priority: "Priority"
+      priority:
+        low: "Low"
+        medium: "Medium"
+        high: "High"
       created_at: "created time"
       delete_confirm_msg: "Delete task, are you sure?"
   tasks:

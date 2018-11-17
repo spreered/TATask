@@ -1,5 +1,4 @@
 <h1><%=t('views.tasks_banner')%></h1>
-<%= request.GET%>
 <%= link_to  t('views.new_task'), new_task_path %>
 <table border="1" style="border-collapse: collapse;">
   <thead>
@@ -7,6 +6,7 @@
       <td><%=created_sort%></td>
       <td><%=deadline_sort%></td>
       <td><%=t('views.tasks.title')%></td>
+      <td><%=priority_sort%></td>
       <td></td>
     </tr>
   </thead>
@@ -16,6 +16,7 @@
       <td><%=I18n.l( task.created_at, format: :short)%></td>
       <td><%=I18n.l( task.deadline, format: :short) if task.deadline.present?%></td>
       <td><%=link_to task.title, task_path(task) %></td>
+      <td><%=t("views.tasks.priority.#{task.priority}") %></td>
       <td><%= link_to  t('views.tasks.edit'), edit_task_path(task) %> <%=button_to 'x', task_path(task),data: {:confirm => 'Are you sure?'}, method: :delete%></td>
     </tr>
     <%end%>
