@@ -8,7 +8,9 @@ class TasksController < ApplicationController
       "deadline_asc" => "deadline ASC",
     "priority_asc" => "priority ASC",
     "priority_desc" => "priority DESC" }
-    @tasks = Task.ordered(sort_params[params[:sort]])
+    @q = Task.ransack(params[:q])
+    puts "q is #{@q.result}"
+    @tasks = @q.result.ordered(sort_params[params[:sort]])
   end
 
   def show
