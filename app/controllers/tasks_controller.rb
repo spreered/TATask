@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[edit update show destroy start done]
   def index
     @q = Task.ransack(params[:q])
-    @tasks = params[:q] ? @q.result : Task.order(created_at: :desc)
+    @tasks = params[:q] ? @q.result.page(params[:page]).per(20) : Task.order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def show
