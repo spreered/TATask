@@ -12,4 +12,12 @@ namespace :dev do
       puts "create task #{task.title}"
     end 
   end
+  task fake_tasks_user: :environment do
+    Task.all.each do |task|
+      if task.user.nil?
+        task.user = User.all.sample
+        task.save
+      end
+    end
+  end
 end
