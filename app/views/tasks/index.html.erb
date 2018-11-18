@@ -1,8 +1,6 @@
 <h1><%=t('views.tasks_banner')%></h1>
 <%= search_form_for @q do |f| %>
   <%= f.input :title_cont, label: t('views.tasks.title') %>
-  <%#= f.input :state_eq, as: :select, collection: [[0, t('views.tasks.state.todo')], 
-  [1, t('views.tasks.state.doing')],[2, t('views.tasks.state.completed')]], label_method: :second, value_method: :first %>
   <%= f.input :state_eq, as: :select,label: t('views.tasks.state_t'), collection: Task.states.keys.map {|state| [Task.states[state], t("views.tasks.state.#{state}")]}, label_method: :second, value_method: :first %>
   <%= f.submit %>
 <% end %>
