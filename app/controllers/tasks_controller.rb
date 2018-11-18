@@ -1,16 +1,8 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[edit update show destroy start done]
   def index
-    # @tasks = Task.all.order(created_at: :desc)
-    sort_params = { "created_asc" => "created_at ASC",
-     "created_desc" => "created_at DESC", 
-     "deadline_desc" => "deadline DESC",
-      "deadline_asc" => "deadline ASC",
-    "priority_asc" => "priority ASC",
-    "priority_desc" => "priority DESC" }
     @q = Task.ransack(params[:q])
-    puts "q is #{@q.result}"
-    @tasks = @q.result.ordered(sort_params[params[:sort]])
+    @tasks = @q.result
   end
 
   def show
