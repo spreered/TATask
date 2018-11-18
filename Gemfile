@@ -39,6 +39,8 @@ gem 'pg', '~> 1.1', '>= 1.1.3'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem 'rails-i18n', '~> 5.1'
 gem 'aasm', '~> 5.0', '>= 5.0.1'
+gem 'ransack', '~> 2.1'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,6 +50,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'rails-controller-testing' # If you are using Rails 5.x
+  gem 'ffaker'
 end
 
 group :development do
