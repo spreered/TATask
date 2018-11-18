@@ -6,7 +6,7 @@ RSpec.feature 'TasksUpdate', type: :feature do
   end
   scenario 'update tasks from index pages' do
     visit tasks_path
-    find("a[href^='/tasks/#{@task.id}/edit']").click
+    find('a.btn-edit').click
     expect(page).to have_current_path(edit_task_path(@task))
     fill_in 'task[title]',	with: 'my test task'
     fill_in 'task[content]', with: 'to do content' 
@@ -19,7 +19,7 @@ RSpec.feature 'TasksUpdate', type: :feature do
   end
   scenario 'update tasks from show pages' do
     visit task_path(@task)
-    click_link I18n.t('views.tasks.edit')
+    find('a.btn-edit').click
     expect(page).to have_current_path(edit_task_path(@task))
     fill_in 'task[title]',	with: 'my test task'
     fill_in 'task[content]', with: 'to do content' 
