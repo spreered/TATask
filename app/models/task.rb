@@ -3,7 +3,7 @@ class Task < ApplicationRecord
   validates :title, presence: true
   enum priority: %i[low medium high]
   enum state: %i[todo doing completed]
-
+  belongs_to :user
 
   aasm column: :state, enum: true do
     state :todo, initial: true
