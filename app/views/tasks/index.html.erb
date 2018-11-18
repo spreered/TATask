@@ -11,8 +11,6 @@
   </div>
 </div>
 
-
-<%= link_to  t('views.new_task'), new_task_path %>
 <table class="table">
   <thead>
     <tr>
@@ -46,5 +44,6 @@
     <%end%>
   </tbody> 
 </table>
-
-<%= paginate @tasks %>
+<div class="d-flex justify-content-center mt-4">
+  <%= paginate @tasks, theme: 'twitter-bootstrap-4'%>
+</div>

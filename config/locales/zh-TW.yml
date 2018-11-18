@@ -31,6 +31,7 @@ zh-TW:
       last: "末頁 &raquo;"
       previous: "&lsaquo; 上頁"
       next: "下頁 &rsaquo;"
+      truncate: "&hellip;"
   tasks:
     create:
       notice: "新增任務成功"
