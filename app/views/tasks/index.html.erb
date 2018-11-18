@@ -1,9 +1,16 @@
-<h1><%=t('views.tasks_banner')%></h1>
-<%= search_form_for @q do |f| %>
-  <%= f.input :title_cont, label: t('views.tasks.title') %>
-  <%= f.input :state_eq, as: :select,label: t('views.tasks.state_t'), collection: Task.states.keys.map {|state| [Task.states[state], t("views.tasks.state.#{state}")]}, label_method: :second, value_method: :first %>
-  <%= f.submit %>
-<% end %>
+
+<div class="card mt-5 mb-3">
+  <div class="card-body bg-light text-dark d-flex justify-content-center">
+    <%= search_form_for @q,
+      wrapper_mappings: {boolean: :inline_boolean},
+      html: { class: 'form-inline' } do |f| %>
+      <%= f.input :title_cont, label: t('views.tasks.title'), input_html: { class: "mr-3 ml-2" } %>
+      <%= f.input :state_eq, as: :select,label: t('views.tasks.state_t'), collection: Task.states.keys.map {|state| [Task.states[state], t("views.tasks.state.#{state}")]}, label_method: :second, value_method: :first ,input_html: { class: "mr-3 ml-2" }%>
+      <%= f.submit class: "btn btn-outline-secondary btn-search mr-sm-2" %>
+    <% end %>
+  </div>
+</div>
+
 
 <%= link_to  t('views.new_task'), new_task_path %>
 <table class="table">
