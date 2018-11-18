@@ -6,16 +6,14 @@ RSpec.feature "TasksDestroy", type: :feature do
   end
   scenario "delete tasks from index pages" do
     visit tasks_path
-    within("form[action^='/tasks/#{@task.id}']"){
-      expect{
-          click_button 'x'
-      }.to change{ Task.count }.by(-1)
-    }
+    expect{
+        find("a.btn-delete").click
+    }.to change{ Task.count }.by(-1)
   end
-    scenario "delete tasks from task show pages" do
+  scenario "delete tasks from task show pages" do
     visit task_path(@task)
     expect{
-        click_link I18n.t('views.tasks.delete')
+      find("a.btn-delete").click
     }.to change{ Task.count }.by(-1)
 
   end

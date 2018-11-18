@@ -1,12 +1,21 @@
 <h1><%=t('views.show_task')%></h1>
 
-<ul>
-  <li><strong><%= t('views.tasks.title')%> :</strong> <%=@task.title%></li>
-  <li><strong><%= t('views.tasks.content')%> :</strong><%=@task.content%></li>
-  <li><strong><%= t('views.tasks.deadline')%> :</strong><%=l(@task.deadline, format: :short) if @task.deadline.present?%></li>
-  <li><strong><%= t('views.tasks.priority_t')%> :</strong><%=t("views.tasks.priority.#{@task.priority}") if @task.priority.present?%></li>
-  <li><strong><%= t('views.tasks.state_t')%> :</strong><%=t("views.tasks.state.#{@task.state}")%>  <%=state_control(@task)%></li>
-  
-</ul>
+<div class="card">
+  <div class="card-header">
+    <%=@task.title%> <span class="badge badge-secondary"><%=t("views.tasks.state.#{@task.state}")%></span>
+  </div>
+  <div class="card-body">
 
-<%= link_to t('views.home'), root_path %> | <%= link_to  t('views.tasks.edit'), edit_task_path(@task) %> | <%=link_to t('views.tasks.delete'), task_path, data: {:confirm => t('views.tasks.delete_confirm_msg')}, method: :delete %> | <%= link_to t('views.new_task'), new_task_path %> | 
+    <p class="card-text"><%=@task.content%></p>
+    <%=state_control(@task)%>
+    <%= link_to edit_task_path(@task), class: 'btn btn-outline-secondary btn-sm btn-edit' do %>
+      <%= fa_icon "edit" %>
+    <%end%> 
+    <%=link_to task_path(@task),data: {:confirm => 'Are you sure?'}, method: :delete, class:"btn btn-outline-danger btn-sm btn-delete" do %>
+      <%= fa_icon "times" %>
+    <%end%>
+  </div>
+  <div class="card-footer text-muted">
+     <%= t('views.tasks.deadline')%> : <em><%=l(@task.deadline, format: :short) if @task.deadline.present?%></em>
+  </div>
+</div>

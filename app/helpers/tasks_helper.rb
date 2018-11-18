@@ -11,10 +11,10 @@ module TasksHelper
   def state_control(task)
     ctrl_str = ''
     if task.todo?
-      ctrl_str +=  ' ' + link_to(t('views.tasks.state.start'), start_task_path, method: :post) + ' '
+      ctrl_str +=  ' ' + link_to(t('views.tasks.state.start'), start_task_path, method: :post, class: 'btn btn-outline-primary btn-sm') + ' '
     end
     unless task.completed?
-      ctrl_str += ' ' + link_to(t('views.tasks.state.done'), done_task_path, method: :post) + ' '
+      ctrl_str += ' ' + link_to(t('views.tasks.state.done'), done_task_path, method: :post, class: 'btn btn-outline-primary btn-sm') + ' '
     end
     ctrl_str.html_safe
   end

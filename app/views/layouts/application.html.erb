@@ -10,12 +10,39 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <h3 style="color: blue"> <%= flash[:notice]%></h3>
-    <%end%>
-    <% if flash[:alert] %>
-      <h3 style="color: red"> <%= flash[:alert]%></h3>
-    <%end%>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <%=link_to t('views.tasks_banner'), root_path, class:'navbar-brand' %>
+  
+    <div class="collapse navbar-collapse" id="forum_menu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%=link_to t('views.new_task'), new_task_path, class:'nav-link'%>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+  <!-- navbar end -->
+  <!-- ===========alert and notice=========== -->
+  <% if flash[:notice] %>
+  <div class="container">
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= notice %>
+    </div>
+  </div>
+  <%end%>
+
+  <% if flash[:alert] %>
+  <div class="container">
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= alert %>
+    </div>
+  </div>
+  <%end%>
+  <!-- ===========alert and notice end =========== -->
+  <div class="container">
     <%= yield %>
+  </div>  
+  
   </body>
 </html>
