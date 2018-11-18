@@ -26,6 +26,11 @@ zh-TW:
         done: "完成"
       created_at: "新增時間"
       delete_confirm_msg: "要刪除任務，你確定嗎？"
+    pagination:
+      first: "&laquo; 首頁"
+      last: "末頁 &raquo;"
+      previous: "&lsaquo; 上頁"
+      next: "下頁 &rsaquo;"
   tasks:
     create:
       notice: "新增任務成功"
