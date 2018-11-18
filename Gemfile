@@ -43,6 +43,7 @@ gem 'ransack', '~> 2.1'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
