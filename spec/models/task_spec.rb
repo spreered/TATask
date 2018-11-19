@@ -3,17 +3,17 @@ RSpec.describe Task, type: :model do
   let(:task) do
     FactoryBot.create(:task)
   end
-  context '#index' do
-    it 'is valid with title and content' do
-      task
-      expect(task).to be_valid
-    end
-    it 'is invalid without title ' do
-      task_1 = Task.new(title:nil)
-      task_1.valid?
-      expect(task_1.errors[:title]).to include(I18n.t('activerecord.errors.models.task.attributes.title.blank'))
-    end
 
+  it 'is valid with title and content' do
+    task
+    expect(task).to be_valid
+  end
+  it 'is invalid without title ' do
+    task_1 = Task.new(title:nil)
+    task_1.valid?
+    expect(task_1.errors[:title]).to include(I18n.t('activerecord.errors.models.task.attributes.title.blank'))
+  end
+  context '#index' do
     describe 'can search tasks by ransack' do 
       let(:task_1){ FactoryBot.create(:task) }
       let(:task_2){ FactoryBot.create(:task, :completed_state) }
