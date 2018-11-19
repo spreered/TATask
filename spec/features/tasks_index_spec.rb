@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.feature "TasksIndex", type: :feature do
+RSpec.feature 'TasksIndex', type: :feature do
   let(:user_1) { FactoryBot.create(:user) } 
   let(:user_2) { FactoryBot.create(:user) } 
   # login
   before(:each) { visit login_path }
 
-  describe "with valid information" do
+  describe 'with valid information' do
     before(:each) do 
-      fill_in "session_email",    with: user_1.email
-      fill_in "session_password", with: user_1.password
+      fill_in 'session_email',    with: user_1.email
+      fill_in 'session_password', with: user_1.password
       click_button I18n.t('views.user.login')
     end
 
@@ -24,7 +24,6 @@ RSpec.feature "TasksIndex", type: :feature do
         visit tasks_path
         expect(page).not_to have_content task.title
       end
-      
     end
     
     describe 'could be ordered' do
@@ -74,7 +73,7 @@ RSpec.feature "TasksIndex", type: :feature do
       end
     end
 
-    describe "could be searched" do
+    describe 'could be searched' do
       let(:task_1) { FactoryBot.create(:task, user_id: user_1.id) }
       let(:task_2) { FactoryBot.create( :task, :completed_state, user_id: user_1.id) }
       it 'by title' do
@@ -98,7 +97,7 @@ RSpec.feature "TasksIndex", type: :feature do
     end
   end
 
-  describe "without login" do
+  describe 'without login' do
     it 'should redirect to login path' do
       visit tasks_path
       expect(page).to have_current_path(login_path)

@@ -1,8 +1,14 @@
 require 'rails_helper'
 
-RSpec.feature "TasksNew", type: :feature do
-  scenario "create tasks from index pages" do
-    FactoryBot.create(:user)
+RSpec.feature 'TasksNew', type: :feature do
+  let(:user) { FactoryBot.create(:user) } 
+  before(:each) do 
+    visit login_path 
+    fill_in 'session_email',    with: user.email
+    fill_in 'session_password', with: user.password
+    click_button I18n.t('views.user.login')
+  end
+  scenario 'create tasks from index pages' do
     # add temp
 
     visit tasks_path
@@ -13,8 +19,6 @@ RSpec.feature "TasksNew", type: :feature do
       fill_in 'task[content]', with: 'to do content' 
       click_button I18n.t('views.submit_btn')
       puts Task.all
-      }.to change{Task.count}.by(1)
-    
-
+      }.to change{ Task.count }.by(1)
   end
 end
