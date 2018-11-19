@@ -13,10 +13,12 @@ Rails.application.routes.draw do
       post :done
     end
   end
-  
-  resources :users
-
+  resources :users, only: %i[new create edit update show]
   resources :sessions
-  
+
+  namespace :admin do
+    root 'users#index'
+    resources :users
+  end
 
 end
