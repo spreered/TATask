@@ -54,6 +54,7 @@ zh-TW:
     destroy:
       notice: "刪除成功"
   users:
+    must_login: "必須登入"
     show:
       alert: "使用者不存在"  
     create:
