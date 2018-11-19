@@ -38,6 +38,9 @@ zh-TW:
       password: "密碼"
       password_confirmation: "密碼確認"
       sing_up: "註冊"
+      login: "登入"
+      new_user_ask: "沒有帳號嗎？"
+
   tasks:
     create:
       notice: "新增任務成功"
@@ -59,6 +62,10 @@ zh-TW:
           attributes:
             title:
               blank: "請輸入任務標題"
+  sessions:
+    create:
+      notice: "登入成功"
+      alert: "帳號或密碼錯誤"
   simple_form:
     error_notification: 
       user: "註冊失敗"

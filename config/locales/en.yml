@@ -31,6 +31,8 @@ zh-TW:
       password: "Password"
       password_confirmation: "Password Confirmation"
       sing_up: "Sign up"
+      login: "Login"
+      new_user_ask: "New user? "
   tasks:
     create:
       notice: "Create a new task !"
@@ -51,4 +53,8 @@ zh-TW:
         task:
           attributes:
             title:
-              blank: "請輸入任務標題"
+              blank: "please enter title"
+  sessions:
+    create:
+      notice: "Login success"
+      alert: "Invalid email/password "
