@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if current_user
+      redirect_to root_path
+    end
   end
   def create
     user = User.find_by(email: params[:session][:email].downcase)
@@ -15,7 +18,7 @@ class SessionsController < ApplicationController
   def destroy
     logout
     flash[:notice] = t('.notice')
-    redirect_to root_path
+    redirect_to login_path
   end
   
 end

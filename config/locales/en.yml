@@ -45,6 +45,7 @@ zh-TW:
     destroy:
       notice: "Task Removed!"
   users:
+    must_login: "Must login!"
     show:
       alert: "user not exist!"
     create:
