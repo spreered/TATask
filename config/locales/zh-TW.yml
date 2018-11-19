@@ -10,6 +10,7 @@ zh-TW:
       title: "標題"
       content: "內容"
       deadline: "結束時間"
+      user: "建立者"
       edit: "編輯"
       delete: "刪除"
       priority_t: "優先權"

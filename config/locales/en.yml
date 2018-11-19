@@ -10,6 +10,7 @@ zh-TW:
       title: "Title"
       content: "Content"
       edit: "Edit"
+      user: "Creator"
       deadline: "Deadline"
       delete: "Delete"
       priority_t: "Priority"

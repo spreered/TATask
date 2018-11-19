@@ -19,6 +19,7 @@
       <th scope="col"><%=t('views.tasks.title')%></th>
       <th scope="col"><%=priority_sort%></th>
       <th scope="col"><%=t('views.tasks.state_t')%></th>
+      <th scope="col"><%=t('views.tasks.user')%></th>
       <th scope="col"> </th>
 
     </tr>
@@ -31,6 +32,7 @@
       <td><%=link_to task.title, task_path(task) %></td>
       <td><%=t("views.tasks.priority.#{task.priority}") %></td>
       <td><%= t("views.tasks.state.#{task.state}")%></td>
+      <td><%= task.user.name%></td>
       <td>
       <%= link_to edit_task_path(task), class: 'btn btn-outline-secondary btn-sm btn-edit' do %>
         <%= fa_icon "edit" %>
