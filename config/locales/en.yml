@@ -34,6 +34,8 @@ zh-TW:
       login: "Login"
       logout: "Log Out"
       new_user_ask: "New user? "
+      profile: "Profile"
+      edit: "Edit Profile"
   tasks:
     create:
       notice: "Create a new task !"
@@ -42,6 +44,8 @@ zh-TW:
     destroy:
       notice: "Task Removed!"
   users:
+    show:
+      alert: "user not exist!"
     create:
       notice: "Singup success!"
     update:
