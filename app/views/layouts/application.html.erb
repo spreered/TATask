@@ -25,14 +25,14 @@
           <%= link_to current_user.email, user_path(current_user), class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%=link_to '登出', logout_path, method: :delete, class:'nav-link' %>
+          <%=link_to t('views.user.logout'), logout_path, method: :delete, class:'nav-link' %>
         </li>
         <%else%>
         <li class="nav-item">
-          <%= link_to '登入', login_path ,class:'nav-link'%>
+          <%= link_to t('views.user.login'), login_path ,class:'nav-link'%>
         </li>
         <li>
-          <%= link_to '註冊', signup_path,class:'nav-link' %>
+          <%= link_to t('views.user.sing_up'), signup_path,class:'nav-link' %>
         </li>
         <%end%>    
       </ul>
