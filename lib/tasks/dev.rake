@@ -14,10 +14,8 @@ namespace :dev do
   end
   task fake_tasks_user: :environment do
     Task.all.each do |task|
-      if task.user.nil?
-        task.user = User.all.sample
-        task.save
-      end
+      task.user = User.all.sample
+      task.save
     end
   end
 end

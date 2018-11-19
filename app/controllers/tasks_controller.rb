@@ -1,8 +1,10 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user
   before_action :set_task, only: %i[edit update show destroy start done]
   def index
     @q = Task.ransack(params[:q])
-    @tasks = params[:q] ? @q.result.page(params[:page]).per(20) : Task.order(created_at: :desc).page(params[:page]).per(20)
+    @tasks = params[:q] ? @q.result.includes(:user).where(users: {id: current_user.id}).page(params[:page]).per(20) : 
+    Task.includes(:user).where(users: {id: current_user.id}).order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def show
@@ -14,7 +16,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.user = User.first
+    @task.user = current_user
     # temperary user assign
     if @task.save
       flash[:notice] = t('.notice')

@@ -10,6 +10,7 @@ zh-TW:
       title: "Title"
       content: "Content"
       edit: "Edit"
+      user: "Creator"
       deadline: "Deadline"
       delete: "Delete"
       priority_t: "Priority"
@@ -31,6 +32,11 @@ zh-TW:
       password: "Password"
       password_confirmation: "Password Confirmation"
       sing_up: "Sign up"
+      login: "Login"
+      logout: "Log Out"
+      new_user_ask: "New user? "
+      profile: "Profile"
+      edit: "Edit Profile"
   tasks:
     create:
       notice: "Create a new task !"
@@ -39,6 +45,9 @@ zh-TW:
     destroy:
       notice: "Task Removed!"
   users:
+    must_login: "Must login!"
+    show:
+      alert: "user not exist!"
     create:
       notice: "Singup success!"
     update:
@@ -51,4 +60,10 @@ zh-TW:
         task:
           attributes:
             title:
-              blank: "請輸入任務標題"
+              blank: "please enter title"
+  sessions:
+    create:
+      notice: "Login success"
+      alert: "Invalid email/password "
+    destroy:
+      notice: "You've been logged out"
