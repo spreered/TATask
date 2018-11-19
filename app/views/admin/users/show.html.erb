@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card mt-5">
+      <div class="card-header text-center">
+        會員資訊
+      </div>
+      <div class="card-body">
+        <p><%= t('views.user.name')%>: <%= @user.name%></p>          
+        <p><%= t('views.user.email')%>: <%= @user.email%></p>          
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <h2>任務列表</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><%=created_sort%></th>
+          <th scope="col"><%=deadline_sort%></th>
+          <th scope="col"><%=t('views.tasks.title')%></th>
+          <th scope="col"><%=priority_sort%></th>
+          <th scope="col"><%=t('views.tasks.state_t')%></th>
+          <th scope="col"><%=t('views.tasks.user')%></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+        <tr>
+          <td><%=I18n.l( task.created_at, format: :short)%></td>
+          <td><%=I18n.l( task.deadline, format: :short) if task.deadline.present?%></td>
+          <td><%=link_to task.title, task_path(task) %></td>
+          <td><%=t("views.tasks.priority.#{task.priority}") %></td>
+          <td><%= t("views.tasks.state.#{task.state}")%></td>
+          <td><%= task.user.name%></td>
+        </tr>
+        <%end%>
+      </tbody> 
+    </table>
+    <div class="d-flex justify-content-center mt-4">
+      <%= paginate @tasks, theme: 'twitter-bootstrap-4'%>
+    </div>
+
+  </div>
+
+</div>
