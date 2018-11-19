@@ -26,6 +26,11 @@ zh-TW:
         done: "Done"
       created_at: "created time"
       delete_confirm_msg: "Delete task, are you sure?"
+    user: 
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      sing_up: "Sign up"
   tasks:
     create:
       notice: "Create a new task !"
@@ -33,6 +38,13 @@ zh-TW:
       notice: "Task Updated!"
     destroy:
       notice: "Task Removed!"
+  users:
+    create:
+      notice: "Singup success!"
+    update:
+      notice: "Account updated!"
+    destroy:
+      notice: "Remove user!"
   activerecord:
     errors:
       models:

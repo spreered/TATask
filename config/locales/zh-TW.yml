@@ -32,6 +32,12 @@ zh-TW:
       previous: "&lsaquo; 上頁"
       next: "下頁 &rsaquo;"
       truncate: "&hellip;"
+    user: 
+      email: "電子信箱"
+      name: "帳戶名"
+      password: "密碼"
+      password_confirmation: "密碼確認"
+      sing_up: "註冊"
   tasks:
     create:
       notice: "新增任務成功"
@@ -39,6 +45,13 @@ zh-TW:
       notice: "更新任務成功"
     destroy:
       notice: "刪除成功"
+  users:
+    create:
+      notice: "註冊成功"
+    update:
+      notice: "帳戶更新成功"
+    destroy:
+      notice: "刪除使用者"
   activerecord:
     errors:
       models:
@@ -46,3 +59,6 @@ zh-TW:
           attributes:
             title:
               blank: "請輸入任務標題"
+  simple_form:
+    error_notification: 
+      user: "註冊失敗"
