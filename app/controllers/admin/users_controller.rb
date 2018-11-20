@@ -44,9 +44,13 @@ class Admin::UsersController < Admin::BaseController
     end
   end
   def destroy
-    @user.destroy
-    flash[:alert] = t('.notice')
-    redirect_to admin_root_path
+    if @user.destroy
+      flash[:notice] = t('.notice')
+      redirect_to admin_root_path
+    else
+      flash[:alert] = @user.errors[:base][0]
+      redirect_to admin_root_path
+    end
   end
   private
 

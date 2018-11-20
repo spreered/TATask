@@ -64,6 +64,7 @@ zh-TW:
       notice: "Account updated!"
     destroy:
       notice: "Remove user!"
+    last_admin_error: "can not delete last admin"
   admin:
     access_deny: "Access deny!"
     users:

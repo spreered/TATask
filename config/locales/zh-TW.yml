@@ -72,6 +72,7 @@ zh-TW:
       notice: "帳戶更新成功"
     destroy:
       notice: "刪除使用者"
+    last_admin_error: "不能刪除最後一個管理者"
   admin:
     access_deny: "訪問禁止"
     users:
