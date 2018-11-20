@@ -15,5 +15,5 @@
 //= require turbolinks
 //= require jquery3
 //= require popper
-//= require tether
+//= require select2
 //= require bootstrap
