@@ -39,6 +39,7 @@ zh-TW:
       new_user_ask: "New user? "
       profile: "Profile"
       edit: "Edit Profile"
+      tasks_count: "Task count"
   tasks:
     create:
       notice: "Create a new task !"

@@ -5,6 +5,7 @@
     <tr>
       <th scope="col"><%=t('views.user.name')%></th>
       <th sope="col"><%=t('views.user.email') %></th>
+      <th sope="col"><%=t('views.user.tasks_count') %></th>
       <th class="user-table-control" scope="col"> </th>
     </tr>
   </thead>
@@ -13,6 +14,7 @@
     <tr>
       <td ><%=link_to user.name, admin_user_path(user) %></td>
       <td ><%= user.email %></td>
+      <td ><%= user.tasks_count %></td>
       <td class="user-table-control">
         <%= link_to admin_user_path(user), class: 'btn btn-outline-secondary btn-sm btn-edit' do %>
           <%= fa_icon 'file-text-o' %>

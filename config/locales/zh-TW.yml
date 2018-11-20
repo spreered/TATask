@@ -46,6 +46,7 @@ zh-TW:
       new_user_ask: "沒有帳號嗎？"
       profile: "個人資訊"
       edit: "編輯資訊"
+      tasks_count: "任務數"
 
   tasks:
     create:
