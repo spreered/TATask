@@ -6,6 +6,7 @@ zh-TW:
     tasks_banner: "TATask manager"
     home: "Home"
     submit_btn: "submit"
+    amdin: "Admin page"
     tasks:
       title: "Title"
       content: "Content"
@@ -33,10 +34,13 @@ zh-TW:
       password_confirmation: "Password Confirmation"
       sing_up: "Sign up"
       login: "Login"
+      create: "Create User"
+      update: "Upate User"
       logout: "Log Out"
       new_user_ask: "New user? "
       profile: "Profile"
       edit: "Edit Profile"
+      tasks_count: "Task count"
   tasks:
     create:
       notice: "Create a new task !"
@@ -54,6 +58,16 @@ zh-TW:
       notice: "Account updated!"
     destroy:
       notice: "Remove user!"
+  admin:
+    users:
+      show:
+        alert: "user not exist!"
+      create:
+        notice: "Singup success!"
+      update:
+        notice: "Account updated!"
+      destroy:
+        notice: "Remove user!"
   activerecord:
     errors:
       models:
