@@ -14,11 +14,14 @@
       <td ><%=link_to user.name, admin_user_path(user) %></td>
       <td ><%= user.email %></td>
       <td class="user-table-control">
+        <%= link_to admin_user_path(user), class: 'btn btn-outline-secondary btn-sm btn-edit' do %>
+          <%= fa_icon 'file-text-o' %>
+        <%end%> 
         <%= link_to edit_admin_user_path(user), class: 'btn btn-outline-secondary btn-sm btn-edit' do %>
-          <%= fa_icon "edit" %>
+          <%= fa_icon 'edit' %>
         <%end%> 
         <%=link_to admin_user_path(user),data: {:confirm => 'Are you sure?'}, method: :delete, class:"btn btn-outline-secondary btn-sm btn-delete" do %>
-          <%= fa_icon "times" %>
+          <%= fa_icon 'times' %>
         <%end%>
       </td>
     </tr>
