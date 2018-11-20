@@ -33,6 +33,8 @@ zh-TW:
       password_confirmation: "Password Confirmation"
       sing_up: "Sign up"
       login: "Login"
+      create: "Create User"
+      update: "Upate User"
       logout: "Log Out"
       new_user_ask: "New user? "
       profile: "Profile"
@@ -54,6 +56,16 @@ zh-TW:
       notice: "Account updated!"
     destroy:
       notice: "Remove user!"
+  admin:
+    users:
+      show:
+        alert: "user not exist!"
+      create:
+        notice: "Singup success!"
+      update:
+        notice: "Account updated!"
+      destroy:
+        notice: "Remove user!"
   activerecord:
     errors:
       models:
