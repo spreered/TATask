@@ -30,6 +30,7 @@
       <td><%=I18n.l( task.created_at, format: :short)%></td>
       <td><%=I18n.l( task.deadline, format: :short) if task.deadline.present?%></td>
       <td><%=link_to task.title, task_path(task) %></td>
+      <td><%=link_to task.title, task_path(task) %> <small><%= badge_tags task.tags%></small></td>
       <td><%=t("views.tasks.priority.#{task.priority}") %></td>
       <td><%= t("views.tasks.state.#{task.state}")%></td>
       <td><%= task.user.name%></td>

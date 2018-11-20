@@ -6,7 +6,8 @@
   </div>
   <div class="card-body">
 
-    <p class="card-text"><%=@task.content%></p>
+    <p class="card-text"><%=truncate @task.content%></p>
+    <p> <%=badge_tags @task.tags%></p>
     <%=state_control(@task)%>
     <%= link_to edit_task_path(@task), class: 'btn btn-outline-secondary btn-sm btn-edit' do %>
       <%= fa_icon "edit" %>
