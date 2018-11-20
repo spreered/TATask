@@ -6,6 +6,7 @@ zh-TW:
     tasks_banner: "TATask 任務管理系統"
     home: "首頁"
     submit_btn: "送出"
+    admin: "管理頁面"
     tasks:
       title: "標題"
       content: "內容"

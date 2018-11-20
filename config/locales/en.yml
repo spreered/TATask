@@ -6,6 +6,7 @@ zh-TW:
     tasks_banner: "TATask manager"
     home: "Home"
     submit_btn: "submit"
+    amdin: "Admin page"
     tasks:
       title: "Title"
       content: "Content"
