@@ -46,6 +46,10 @@ zh-TW:
       update: "更新"
       login: "登入"
       logout: "登出"
+      role: "角色"
+      roles:
+        admin: "管理員"
+        normal: "正常人"
       new_user_ask: "沒有帳號嗎？"
       profile: "個人資訊"
       edit: "編輯資訊"

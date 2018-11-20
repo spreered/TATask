@@ -6,6 +6,7 @@
       <th scope="col"><%=t('views.user.name')%></th>
       <th sope="col"><%=t('views.user.email') %></th>
       <th sope="col"><%=t('views.user.tasks_count') %></th>
+      <th sope="col"><%=t('views.user.role') %></th>
       <th class="user-table-control" scope="col"> </th>
     </tr>
   </thead>
@@ -15,6 +16,15 @@
       <td ><%=link_to user.name, admin_user_path(user) %></td>
       <td ><%= user.email %></td>
       <td ><%= user.tasks_count %></td>
+      <td>
+        <%= simple_form_for [:admin,user], wrapper: :inline_form, html:{class:'form-inline'} do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :role, as: :select, collection: [['admin', t('views.user.roles.admin')], ['normal', t('views.user.roles.normal')]], label_method: :second, value_method: :first %>
+          <%= button_tag type:'submit' , class: 'btn btn-outline-secondary ml-1' do %>
+            <%=fa_icon 'cog'%>
+          <%end%>
+        <%end%>
+      </td>
       <td class="user-table-control">
         <%= link_to admin_user_path(user), class: 'btn btn-outline-secondary btn-sm btn-edit' do %>
           <%= fa_icon 'file-text-o' %>

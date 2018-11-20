@@ -43,6 +43,10 @@ zh-TW:
       profile: "Profile"
       edit: "Edit Profile"
       tasks_count: "Task count"
+      role: "角色"
+      roles:
+        admin: "管理員"
+        normal: "正常人"
   tasks:
     create:
       notice: "Create a new task !"
