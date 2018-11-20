@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::BaseController
   before_action :set_user, only: %i[edit update show destroy start done]
   def index
     @users = User.page(params[:page]).per(20)

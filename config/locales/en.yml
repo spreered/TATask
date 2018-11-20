@@ -4,7 +4,9 @@ zh-TW:
     new_task: "New Task"
     show_task: "Show Task"
     tasks_banner: "TATask manager"
+    admin_banner: "TATask admin"
     home: "Home"
+    front_end: "Front end"
     submit_btn: "submit"
     amdin: "Admin page"
     tasks:
@@ -59,6 +61,7 @@ zh-TW:
     destroy:
       notice: "Remove user!"
   admin:
+    access_deny: "Access deny!"
     users:
       show:
         alert: "user not exist!"
