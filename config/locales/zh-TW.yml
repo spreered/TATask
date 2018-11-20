@@ -4,6 +4,8 @@ zh-TW:
     new_task: "新增任務"
     show_task: "任務檢視"
     tasks_banner: "TATask 任務管理系統"
+    admin_banner: "TATask 任務管理後台"
+    front_end: "前台"
     home: "首頁"
     submit_btn: "送出"
     admin: "管理頁面"
@@ -44,6 +46,10 @@ zh-TW:
       update: "更新"
       login: "登入"
       logout: "登出"
+      role: "角色"
+      roles:
+        admin: "管理員"
+        normal: "正常人"
       new_user_ask: "沒有帳號嗎？"
       profile: "個人資訊"
       edit: "編輯資訊"
@@ -66,7 +72,9 @@ zh-TW:
       notice: "帳戶更新成功"
     destroy:
       notice: "刪除使用者"
+    last_admin_error: "不能刪除最後一個管理者"
   admin:
+    access_deny: "訪問禁止"
     users:
       show:
         alert: "使用者不存在"  

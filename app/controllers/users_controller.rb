@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, only: %i[show edit update]
   def show
-    @user = User.find_by(id: params[:id])
+    @user = current_user
     unless @user
       flash[:alert] = t('.alert')
       return redirect_to root_path
@@ -21,13 +21,13 @@ class UsersController < ApplicationController
     end
   end
   def edit
-    @user = User.find_by(id: params[:id])
+    @user = current_user
     unless @user
       return redirect_to root_path
     end
   end
   def update
-    @user = User.find_by(id: params[:id])
+    @user = current_user
     
     unless @user
       return redirect_to root_path

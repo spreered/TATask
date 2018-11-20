@@ -4,7 +4,9 @@ zh-TW:
     new_task: "New Task"
     show_task: "Show Task"
     tasks_banner: "TATask manager"
+    admin_banner: "TATask admin"
     home: "Home"
+    front_end: "Front end"
     submit_btn: "submit"
     amdin: "Admin page"
     tasks:
@@ -41,6 +43,10 @@ zh-TW:
       profile: "Profile"
       edit: "Edit Profile"
       tasks_count: "Task count"
+      role: "角色"
+      roles:
+        admin: "管理員"
+        normal: "正常人"
   tasks:
     create:
       notice: "Create a new task !"
@@ -58,7 +64,9 @@ zh-TW:
       notice: "Account updated!"
     destroy:
       notice: "Remove user!"
+    last_admin_error: "can not delete last admin"
   admin:
+    access_deny: "Access deny!"
     users:
       show:
         alert: "user not exist!"
