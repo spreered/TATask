@@ -6,6 +6,7 @@
       html: { class: 'form-inline' } do |f| %>
       <%= f.input :title_cont, label: t('views.tasks.title'), input_html: { class: "mr-3 ml-2" } %>
       <%= f.input :state_eq, as: :select,label: t('views.tasks.state_t'), collection: Task.states.keys.map {|state| [Task.states[state], t("views.tasks.state.#{state}")]}, label_method: :second, value_method: :first ,input_html: { class: "mr-3 ml-2" }%>
+      <%= f.input :tags_name_eq, ad: :select, label: 'Tag', collection: Tag.order(:name), label_method: :name,value_method: :name, input_html: { class: "mr-3 ml-2" } %>
       <%= f.submit class: "btn btn-outline-secondary btn-search mr-sm-2" %>
     <% end %>
   </div>
@@ -29,7 +30,6 @@
     <tr>
       <td><%=I18n.l( task.created_at, format: :short)%></td>
       <td><%=I18n.l( task.deadline, format: :short) if task.deadline.present?%></td>
-      <td><%=link_to task.title, task_path(task) %></td>
       <td><%=link_to task.title, task_path(task) %> <small><%= badge_tags task.tags%></small></td>
       <td><%=t("views.tasks.priority.#{task.priority}") %></td>
       <td><%= t("views.tasks.state.#{task.state}")%></td>
