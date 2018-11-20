@@ -3,8 +3,8 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[edit update show destroy start done]
   def index
     @q = Task.ransack(params[:q])
-    @tasks = params[:q] ? @q.result.includes(:user).where(users: {id: current_user.id}).page(params[:page]).per(20) : 
-    Task.includes(:user).where(users: {id: current_user.id}).order(created_at: :desc).page(params[:page]).per(20)
+    @tasks = params[:q] ? @q.result.includes(:user,:tags).where(users: {id: current_user.id}).page(params[:page]).per(20) : 
+    Task.includes(:user,:tags).where(users: {id: current_user.id}).order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def show
@@ -61,7 +61,8 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :content, :deadline, :priority)
+    params.require(:task).permit(:title, :content, :deadline, :priority,
+    {tag_items:[]})
   end
 
   def set_task

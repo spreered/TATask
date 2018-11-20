@@ -65,6 +65,24 @@
   <div class="container">
     <%= yield %>
   </div>  
-  
+  <script>
+    $(document).on('turbolinks:load', function () {
+
+      $("#task_tag_items").select2({
+        tags: true,
+        createTag: function(params){
+          var term = $.trim(params.term);
+          if (term === '') {
+            return null;
+          }
+          return {
+            id: term,
+            text: term,
+            newTag: true 
+          }
+        }
+      })
+    });
+  </script>
   </body>
 </html>
