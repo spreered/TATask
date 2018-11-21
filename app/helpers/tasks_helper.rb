@@ -18,4 +18,7 @@ module TasksHelper
     end
     ctrl_str.html_safe
   end
+  def badge_tags(tags)
+    tags.map(&:name).map{|tag|"<span class='badge badge-light'>#{tag}</span>"}.join(' ').html_safe
+  end
 end

@@ -1,4 +1,11 @@
 FactoryBot.define do
+  factory :tagging do
+    tag { nil }
+    taks { nil }
+  end
+  factory :tag do
+    name { "MyString" }
+  end
   factory :user do
     sequence(:email) {|n| "user_#{n}@example.com"}
     sequence(:name) {|n| "User #{n}"}
