@@ -5,9 +5,9 @@ class Admin::BaseController < ApplicationController
   private 
     def authenticate_admin
       unless current_user.admin?
+        # layout "application"
         # error page here
-        flash[:alert] = t('admin.access_deny')
-        redirect_to root_path
+        return not_found
       end
     end
 end

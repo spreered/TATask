@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user
   before_action :set_task, only: %i[edit update show destroy start done]
+  before_action :current_user_post?, only: %i[edit update show destroy start done]
   def index
     @q = Task.ransack(params[:q])
     @tasks = params[:q] ? @q.result.includes(:user,:tags).where(users: {id: current_user.id}).page(params[:page]).per(20) : 
@@ -67,6 +68,10 @@ class TasksController < ApplicationController
 
   def set_task
     @task = Task.find_by(id: params[:id])
-    return redirect_to root_path if @task.nil?
+    return not_found if @task.nil?
+  end
+
+  def current_user_post?
+    return not_found if @task.user != current_user
   end
 end
